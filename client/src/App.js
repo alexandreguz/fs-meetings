@@ -12,7 +12,7 @@ export default function App() {
     <div className="App">
 
     <h1>Welcome to Meeting Application!</h1>
-    <Teams />
+    {/* <Teams /> */}
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
