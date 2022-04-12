@@ -97,8 +97,6 @@ const AddMeeting = () => {
                 <br/>
                 <br/>
                 <br/>
-
-
                 <button onClick={handleSubmit}>Create</button>
             </form>
 

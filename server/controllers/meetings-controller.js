@@ -1,10 +1,17 @@
 import express from 'express';
-import {getAll, addMeetings} from '../bl/meetings-bl.js'
+import {getAll, addMeetings, getMeetingById} from '../bl/meetings-bl.js'
 
 const meetingsRouter = express.Router();
 
 meetingsRouter.get("/meetings", async (req, res) => {
     let result = await getAll();
+        res.send(result)
+    
+});
+
+meetingsRouter.get("/meetings/:id", async (req, res) => {
+    let id  = +req.params.id
+    let result = await getMeetingById(id);
         res.send(result)
     
 });

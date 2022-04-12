@@ -1,0 +1,40 @@
+CREATE DATABASE developersCalendar;
+
+use developersCalendar;
+
+
+
+CREATE TABLE `meetings` (
+  `meeting_id` INT  AUTO_INCREMENT,
+  `team_id` int NOT NULL,
+  `begin` datetime NOT NULL,
+  `end` datetime NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `place` varchar(255)  NOT NULL,
+   PRIMARY KEY (`meeting_id`),
+   FOREIGN KEY (`team_id`) REFERENCES teams(`team_id`)
+
+) ;
+
+select * from meetings;
+
+INSERT INTO `meetings` (`team_id`, `begin`, `end`, `description`, `place`) VALUES
+( 1, '2022-05-23 09:00:00', '2022-05-23 10:00:00', 'create new UI', 'red room')
+-- ( 1, '2022-04-28 11:00:00', '2022-04-28 12:00:00', 'develop UX', 'green room'),
+-- ( 2, '2022-04-25 09:00:00', '2022-04-23 10:30:00', 'product review', 'red room')
+;
+
+CREATE TABLE `teams` (
+  `team_id` INT NOT NULL AUTO_INCREMENT,
+  `team_name` varchar(255)  NOT NULL,
+   PRIMARY KEY (`team_id`)
+
+);
+
+select * from teams;
+
+INSERT INTO `teams` (`team_name`) VALUES
+('UI Team'),
+('React team'),
+('mobile team')
+;
